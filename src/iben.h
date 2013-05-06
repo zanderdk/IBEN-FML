@@ -20,10 +20,11 @@
 #ifndef __IBEN_H_
 #define __IBEN_H_
 
-#include <string>
 #include <map>
+#include <string>
 
 #include <bdd.h>
+#include <string.h>
 
 #define EXPR 1
 #define VARASSOC 2
