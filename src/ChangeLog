@@ -1,0 +1,21 @@
+2003-03-25  Gerd Behrmann  <behrmann@cs.auc.dk>
+
+	* docs      Added man page and made 'help' command show it
+	* main.cc   Added free() method
+	* grammar.y Fixed variable naming problem when redeclaring 
+	            variables
+
+2003-03-24  Gerd Behrmann  <behrmann@cs.auc.dk>
+
+	* main.cc Added custom printdot function which uses the declared
+	          variables names in nodes.
+
+2003-03-18  Gerd Behrmann  <behrmann@cs.auc.dk>
+
+	* build	 Added better detection of readline capabilities
+	* parser Added T_ prefix to all tokens
+
+2003-02-27  Gerd Behrmann  <behrmann@cs.auc.dk>
+
+	* iben First public source release
+

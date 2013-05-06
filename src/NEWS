@@ -1,0 +1,7 @@
+February 27th, 2003, version 1.1
+--------------------------------------
+
+Released IBEN version 1.1 under GPL. This is the first GPL release.
+
+Notice: 'make install' will not copy the README file. Without the
+README file the help feature does not work.
