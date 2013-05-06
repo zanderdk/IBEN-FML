@@ -1299,9 +1299,9 @@ case 51:
     delete yyvsp[0].f;
     pclose(stream); 
 
-    snprintf(cmd, 128, "ghostview /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
+    snprintf(cmd, 128, PSV" /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
     if (!fork()) { 
-	printf("executing ghostview\n"); 
+	printf("executing "PSV" \n"); 
 	execl("/bin/sh", "sh", "-c", cmd, NULL); 
 	perror("iben"); 
 	exit(1);
