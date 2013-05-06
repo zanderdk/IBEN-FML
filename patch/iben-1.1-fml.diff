@@ -1,0 +1,67 @@
+diff -urP iben-1.1/grammar.cc iben-1.1-patched/grammar.cc
+--- iben-1.1/grammar.cc	2003-03-25 10:09:05.000000000 +0100
++++ iben-1.1-patched/grammar.cc	2013-05-06 20:42:48.557138645 +0200
+@@ -1299,9 +1299,9 @@
+     delete yyvsp[0].f;
+     pclose(stream); 
+ 
+-    snprintf(cmd, 128, "ghostview /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
++    snprintf(cmd, 128, PSV" /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
+     if (!fork()) { 
+-	printf("executing ghostview\n"); 
++	printf("executing "PSV" \n"); 
+ 	execl("/bin/sh", "sh", "-c", cmd, NULL); 
+ 	perror("iben"); 
+ 	exit(1);
+diff -urP iben-1.1/grammar.yy iben-1.1-patched/grammar.yy
+--- iben-1.1/grammar.yy	2003-03-25 09:47:36.000000000 +0100
++++ iben-1.1-patched/grammar.yy	2013-05-06 20:42:48.557138645 +0200
+@@ -455,9 +455,9 @@
+     delete $2;
+     pclose(stream); 
+ 
+-    snprintf(cmd, 128, "ghostview /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
++    snprintf(cmd, 128, PSV" /tmp/iben%ld.ps; rm /tmp/iben%ld.ps", pid, pid); 
+     if (!fork()) { 
+-	printf("executing ghostview\n"); 
++	printf("executing "PSV" \n"); 
+ 	execl("/bin/sh", "sh", "-c", cmd, NULL); 
+ 	perror("iben"); 
+ 	exit(1);
+diff -urP iben-1.1/iben.1 iben-1.1-patched/iben.1
+--- iben-1.1/iben.1	2003-03-25 09:47:37.000000000 +0100
++++ iben-1.1-patched/iben.1	2013-05-06 20:42:48.557138645 +0200
+@@ -43,7 +43,7 @@
+         Print all satisfying assignments.
+ 	show <expr>
+         Show the BDD representing the expression as a graph. This
+-        requires access to ghostview.
++        requires access to a postscript viewer.
+ 
+ Sizes:
+ 	size <expr> <expr> ...
+@@ -148,4 +148,4 @@
+ PARTICULAR PURPOSE.
+  
+ 
+- 
+\ No newline at end of file
++ 
+diff -urP iben-1.1/iben.h iben-1.1-patched/iben.h
+--- iben-1.1/iben.h	2003-03-25 08:41:26.000000000 +0100
++++ iben-1.1-patched/iben.h	2013-05-06 20:42:48.557138645 +0200
+@@ -20,10 +20,13 @@
+ #ifndef __IBEN_H_
+ #define __IBEN_H_
+ 
+-#include <string>
+ #include <map>
++#include <string>
+ 
+ #include <bdd.h>
++#include <string.h>
++
++#define PSV "gsview"
+ 
+ #define EXPR 1
+ #define VARASSOC 2
