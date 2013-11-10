@@ -19,13 +19,13 @@ The following dependencies should be installed before compiling IBEN-FML.
 3. Use the standard ./configure and make combination to compile the program.
 
 ## Patches
-This is a list of all the changes made to the program, none of the patches changes should impact the any of the computations done by the program.
+This is a list of all the changes made to the program, none of the patches should impact any of the computations done by the program.
 
 + Added the C 'string.h' header for the 'strlen' method as it is not always included in the C++ header.
 + Added macro for the path to the postscript viewer in 'iben.h', and inserted it instead of 'Ghostview'.
 + Changed the mentions of 'Ghostview' in the man page to postscript viewer.
 
-Note: if you only want the patches and not the source code is a patch file provided in the patch folder.
+Note: if you only want the patches and not the source code, is a patch file provided in the patch folder.
 
 ##License
 The program is licensed under version 2 of the GPL as IBEN originally was, and a copy of the license is bundled with the program. 
