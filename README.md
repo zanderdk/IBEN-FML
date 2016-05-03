@@ -9,7 +9,7 @@ The following dependencies should be installed before compiling IBEN-FML.
 + graphviz 
 
 ## Installation
-1. run sh src/install.sh
+1. run sudo sh src/install.sh
 
 ## Patches
 This is a list of all the changes made to the program, none of the patches should impact any of the computations done by the program.
