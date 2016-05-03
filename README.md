@@ -1,5 +1,3 @@
-to install run sh src/install.sh
-
 #IBEN-FML
 A fork of [IBEN 1.1](https://sourceforge.net/projects/iben/) originally created by Gerd Behrmann, with patches allowing compilation on modern Linux distributions, as well as other small improvements such as the ability to choose another postscript viewer then Ghostview, which IBEN 1.1 originally used.
 
@@ -11,14 +9,8 @@ The following dependencies should be installed before compiling IBEN-FML.
 + graphviz 
 
 ## Installation
-1. Install BuDDy, graphviz, and a postscript viewer, GSview is used as the default.
 
-2. If another viewer then GSview is installed, then change the macro PSV in iben.h.
-```
-#define PSV "gsview" => #define PSV "your viewer"
-```
-
-3. Use the standard ./configure and make combination to compile the program.
+1. to install run sh src/install.sh
 
 ## Patches
 This is a list of all the changes made to the program, none of the patches should impact any of the computations done by the program.
