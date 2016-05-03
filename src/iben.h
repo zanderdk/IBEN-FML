@@ -26,7 +26,7 @@
 #include <bdd.h>
 #include <string.h>
 
-#define PSV "gsview"
+#define PSV "gv"
 
 #define EXPR 1
 #define VARASSOC 2
